@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     tools:context="com.dg.app.ui.DogName">
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_top_bar"
+        android:background="@color/main_yellow"
+        android:gravity="center_vertical" >
+
+        <include layout="@layout/commom_back_btn" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/container_remove"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/common_tab_bg"
+            android:onClick="sendName"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="9dp"
+                android:scaleType="centerInside"
+                android:text="发送"/>
+        </RelativeLayout>
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/container_to_group"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:background="@drawable/common_tab_bg"-->
+        <!--android:onClick="toGroupDetails"-->
+        <!--android:visibility="gone" >-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:scaleType="centerInside"-->
+        <!--android:src="@drawable/to_group_details_normal" />-->
+        <!--</RelativeLayout>-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="16dp"
+        >
+        <!-- 文本输入框-->
+        <EditText
+            android:id="@+id/nearby_send_chat"
+            style="@style/TextViewSubhead"
+            android:layout_width="match_parent"
+            android:background="@color/transparent"
+            android:gravity="top"
+            android:minLines="5"
+            android:maxLength="140"
+            android:textSize="@dimen/text_size_16"
+            android:hint="@string/gouda_nearby_chat"
+            android:textColorHint="#C9C9CE" />
+
+        <TextView
+            android:id="@+id/tweet_text_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/nearby_send_chat"
+            android:background="@drawable/word_count_round_corner"
+            android:textSize="@dimen/text_size_16"
+            android:text="20x"
+            android:textColor="#C9C9CE" />
+
+    </RelativeLayout>
+<!--<EditText-->
+    <!--android:id="@+id/dog_name"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:gravity="left"-->
+    <!--android:hint="我的狗狗是"/>-->
+
+
+</LinearLayout>

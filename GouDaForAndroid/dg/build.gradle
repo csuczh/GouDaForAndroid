@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+    defaultConfig {
+        applicationId "com.dg.app"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.loopj.android:android-async-http:1.4.7'
+    compile files('libs/KJFrameForAndroid_v2.223.jar')
+    compile files('libs/xstream-1.4.7.jar')
+    compile files('libs/library-2.4.0.jar')
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile files('libs/BaiduLBS_Android.jar')
+    compile(name: 'appcompat-v7-22.2.1', ext: 'aar')
+    compile(name: 'support-v4-22.2.1', ext: 'aar')
+    compile(name: 'percent-22.2.0', ext: 'aar')
+    compile files('libs/umeng-analytics-v5.2.4.jar')
+    compile files('libs/Parse-1.9.4.jar')
+    compile files('libs/picasso-2.4.0.jar')
+    compile files('libs/google-play-services.jar')
+    compile files('libs/easemobchat_2.2.2.jar')
+    compile files('libs/bolts-android-1.2.0.jar')
+    compile files('libs/gson-2.2.4.jar')
+    compile files('libs/commons-codec-1.9.jar')
+    compile files('libs/photoview-library.jar')
+    compile files('libs/com.umeng.message.lib_v2.5.0.jar')
+    compile files('libs/android-support-v4.jar')
+    //    compile project(':library')
+//    compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+}

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dg.app">
+
+    <!--*****************************************************************************-->
+    <!-- 友盟-->
+    <!-- 权限-->
+    <!-- 必选 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--【必选】用以设置前台是否显示通知-->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 可选 -->
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />;
+
+    <!--*****************************************************************************-->
+
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.easemob.chatuidemo.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.easemob.chatuidemo.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FIND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
+    <!-- ***********************************分享所需权限******************************-->
+    <!-- ###################声明SDK使用的相关权限###################### -->
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22"
+        tools:overrideLibrary="com.umeng.socialize.evernote,com.umeng.socialize.pinterest" />
+    <!-- 检测网络状态 -->
+    <!-- 获取mac地址作为用户的备用唯一标识 -->
+    <!-- 获取用户手机的IMEI，用来唯一的标识用户 -->
+    <!-- 缓存资源优先存入SDcard -->
+    <!-- 允许应用程序联网，以便向我们的服务器端发送数据 -->
+    <!-- QQ、QQ空间所需权限 -->
+    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- *********************************************************************************-->
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <!-- android:theme="@style/AppBaseTheme_Light" -->
+    <application
+        android:name=".AppContext"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_dg"
+        android:label="狗搭"
+        android:theme="@style/AppBaseTheme_Light" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="1PntCOXmHplLgbSMzm0Kvz0s" />
+        <!-- 设置环信应用的appkey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="hunanfadaiwangluokeji#goumatch" />
+        <!-- 声明sdk所需的service -->
+        <service android:name="com.easemob.chat.EMChatService" />
+        <!-- 声明sdk所需的receiver -->
+        <receiver android:name="com.easemob.chat.EMMonitorReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 百度地图所需的service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <!-- 登陆 -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 注册 -->
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:label=""
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.SelectActivity"
+            android:label="@string/title_activity_select"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.SendJYInvite"
+            android:label="@string/title_activity_send_invite"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.SendXQInvite"
+            android:label="@string/title_activity_send_invite"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.SendLDInvite"
+            android:label="@string/title_activity_send_invite"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.ChatActivity"
+            android:label="@string/title_activity_send_invite"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.ChatDetailActivity"
+            android:label="@string/title_activity_send_invite"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- <activity -->
+        <!-- android:name=".ui.FindNearbyActivity" -->
+        <!-- android:label="@string/title_activity_find_nearby" -->
+        <!-- android:screenOrientation="portrait"> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".ui.DetailUserActivity"
+            android:label="@string/title_activity_detail_user"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.AlertDialog"
+            android:label="@string/title_activity_detail_user"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyle">
+        </activity>
+        <activity
+            android:name=".ui.BaiduMapActivity"
+            android:label="@string/title_activity_detail_user"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.BaseActivity"
+            android:label="@string/title_activity_detail_user"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.CallActivity"
+            android:label="@string/title_activity_detail_user"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.EditActivity"
+            android:label="@string/title_activity_detail_user"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.ForwardMessageActivity"
+            android:label="@string/title_activity_detail_user"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.ImageGridActivity"
+            android:label="@string/title_activity_detail_user"
+            >
+        </activity>
+        <activity
+            android:name=".ui.PickContactNoCheckboxActivity"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.RecorderVideoActivity"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.ShowBigImage"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.ShowNormalFileActivity"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.ShowVideoActivity"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.UserProfileActivity"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.VideoCallActivity"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.VoiceCallActivity"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.ContextMenu"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+        <activity
+            android:name=".ui.DogName"
+            android:label="@string/title_activity_detail_user" >
+        </activity>
+
+        <!-- 开机自启动服务 -->
+        <receiver android:name="com.easemob.chat.StartServiceReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- gcm start -->
+        <receiver
+            android:name="com.easemob.chat.EMGCMBroadcastReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.easemob.chatuidemo" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.easemob.chat.EMGCMListenerService"
+            android:exported="false" >
+        </service>
+
+        <receiver
+            android:name="com.easemob.chatuidemo.receiver.GCMPushBroadCast"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.easemob.sdk.push" />
+
+                <category android:name="com.easemob.chatuidemo" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ui.SubArticleActivity"
+            android:label="@string/title_activity_sub_article"
+
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.SearchArticleActivity"
+            android:label="@string/title_activity_search_article"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.DetailDKActivity"
+            android:label="@string/title_activity_detail_dk" >
+        </activity>
+        <activity
+            android:name=".ui.FindSendChat"
+            android:label="@string/title_activity_detail_dk" >
+        </activity>
+
+        <!--关-->
+        <!--*****************************************************************************-->
+        <!-- 友盟组件-->
+        <!-- 监听通知点击或者忽略处理的广播 -->
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" >
+        </receiver>
+
+        <!-- 监听开机运行、网络连接变化、卸载的广播 -->
+        <receiver
+            android:name="com.umeng.message.SystemReceiver"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 监听消息到达的广播 -->
+        <receiver
+            android:name="com.umeng.message.MessageReceiver"
+            android:exported="false"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 监听宿主选举的广播 -->
+        <receiver
+            android:name="com.umeng.message.ElectionReceiver"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4" />
+                <category android:name="umeng" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 监听注册的广播 -->
+        <!-- com.dg.app字符串需要替换成本应用的应用包名 -->
+        <receiver
+            android:name="com.umeng.message.RegistrationReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.dg.app.intent.action.COMMAND" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.umeng.message.UmengMessageBootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+
+
+        <!-- Umeng的长连服务，用来建立推送的长连接的 -->
+        <!-- com.dg.app字符串需要替换成本应用的应用包名 -->
+        <service
+            android:name="com.umeng.message.UmengService"
+            android:label="PushService"
+            android:exported="true"
+            android:process=":push" >
+            <intent-filter>
+                <action android:name="com.dg.app.intent.action.START" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dg.app.intent.action.COCKROACH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING_V4" />
+                <category android:name="umeng" />
+            </intent-filter>
+        </service>
+
+        <!-- Umeng的消息接收服务 -->
+        <service android:name="com.umeng.message.UmengIntentService"
+            android:process=":push" />
+
+        <!-- Umeng的消息路由服务 -->
+        <service
+            android:name="com.umeng.message.UmengMessageIntentReceiverService"
+            android:process=":push"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.android.agoo.client.ElectionReceiverService" />
+            </intent-filter>
+        </service>
+
+        <!-- v2.4.1添加的Service，Umeng的消息接收后的处理服务 -->
+        <service android:name="com.umeng.message.UmengMessageCallbackHandlerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.umeng.messge.registercallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.unregistercallback.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.handler.action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.autoupdate.handler.action"/>
+            </intent-filter>
+        </service>
+
+        <!-- V1.3.0添加的service，负责下载通知的资源 -->
+        <service android:name="com.umeng.message.UmengDownloadResourceService" />
+
+        <!-- V2.5.0添加的Service，用于本地通知 -->
+        <!-- 如果不使用本地通知，可以注释掉本地通知服务的配置 -->
+        <service android:name="com.umeng.message.local.UmengLocalNotificationService"
+            android:exported="false"/>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5619dd1667e58e92e40039f4">
+        </meta-data>
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="1ac7921d9a0d7855e3b7b337c8f70be0" >
+        </meta-data>
+
+
+        <!--*****************************************************************************-->
+
+        <!-- 请填写实际的类名，下面仅是示例代码-->
+        <service android:name="com.dg.app.service.MomentPushIntentService" android:process=":push"/>
+
+        <!--*****************************************************************************-->
+        <!-- 图片浏览界面-->
+        <activity android:name=".ui.ImageActivity"/>
+        <!-- 状态详情界面-->
+        <activity android:name=".ui.TweetDetailActivity" />
+        <!-- 我的消息界面-->
+        <activity android:name=".ui.MyMessageActivity" />
+        <!-- 发布状态界面-->
+        <activity android:name=".ui.WriteStatusActivity" />
+
+        <!-- 我的模块-->
+        <activity android:name=".ui.MyDetailInfoActivity"/>
+        <activity android:name=".ui.MengRankActivity" />
+        <activity android:name=".ui.InvitationActivity" />
+        <activity android:name=".ui.CollectionActivity" />
+        <activity android:name=".ui.SettingActivity" />
+
+        <activity android:name=".ui.UpdatepwdActivity" />
+        <activity android:name=".ui.NoticeSettingActivity" />
+
+        <activity android:name=".ui.MyDetailInfoEditActivity"/>
+        <activity android:name=".ui.DogDetailInfoEditActivity"/>
+
+        <activity android:name=".ui.NickNameEditActivity"/>
+        <activity android:name=".ui.UserJobEditActivity"/>
+        <activity android:name=".ui.GiveAdviceActivity"/>
+
+
+        <activity android:name=".ui.ClearChatRecordActivity"/>
+        <activity android:name=".ui.AboutDGActivity"/>
+        <activity android:name=".ui.ContactUsActivity"/>
+
+        <activity android:name=".ui.DGUserInfoActivity"/>
+
+        <activity android:name=".ui.DogTypeEditActivity"/>
+
+        <!-- 注册模块-->
+        <activity android:name=".ui.UserInfoActivity"/>
+        <activity android:name=".ui.PhoneRegistActivity"/>
+        <activity android:name=".ui.ForgetPwdActivity"/>
+        <activity android:name=".ui.LocationActivity"/>
+
+        <activity android:name=".ui.DogIntroActivity"/>
+        <activity android:name=".ui.DogInfoActivity"/>
+
+        <activity android:name=".ui.TagListActivity"/>
+
+        <activity android:name=".ui.ImagesBrowserActivity"/>
+
+        <activity android:name=".ui.MengIntroActivity"/>
+
+        <activity android:name=".ui.FansListActivity"/>
+
+    </application>
+
+</manifest>

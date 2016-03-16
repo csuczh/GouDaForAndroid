@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/space_5"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_follow_ta"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_popmenu_first"
+                android:textColor="@color/project_listitem_title"
+                android:text="关注TA"/>
+
+            <Button
+                android:id="@+id/btn_begin_chat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_popmenu_single"
+                android:textColor="@color/project_listitem_title"
+                android:text="发起聊天"/>
+
+            <Button
+                android:id="@+id/btn_invite_liugou"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_popmenu_single"
+                android:textColor="@color/project_listitem_title"
+                android:text="约TA一起遛狗"/>
+
+            <Button
+                android:id="@+id/btn_invite_xiangqin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_popmenu_single"
+                android:textColor="@color/project_listitem_title"
+                android:text="想和TA的狗狗相亲"/>
+
+            <Button
+                android:id="@+id/btn_share2other"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_popmenu_single"
+                android:textColor="@color/project_listitem_title"
+                android:text="分享到其他的平台"/>
+
+
+            <Button
+                android:id="@+id/btn_jubao"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_popmenu_last"
+                android:textColor="@color/redbutton"
+                android:text="举报"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_popmenu_single"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="5dip"
+            android:text="取消"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_white2gray_sel"
+    android:id="@+id/ll_fan_item"
+    android:orientation="horizontal" >
+
+    <!-- 头像-->
+    <RelativeLayout
+        android:layout_width="55dp"
+        android:layout_height="55dp">
+
+        <!-- 发布者头像 -->
+
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/riv_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:contentDescription="@string/app_name"
+            android:focusable="false"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_dg"/>
+
+        <ImageView
+            android:id="@+id/iv_fan_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="4dp"
+            android:paddingRight="8dp"
+            android:src="@mipmap/ic_round_woman"/>
+
+    </RelativeLayout>
+
+    <!--用户信息-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:orientation="vertical" >
+        <!-- 用户ID -->
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/space_5"
+            android:textColor="#342925"
+            android:text="暮光之城"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:gravity="bottom"
+            android:layout_marginBottom="@dimen/space_2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_user_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textSize="12sp"
+                android:textColor="#969692"
+                android:text="女/21岁/学生"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/space_1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/space_20"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_coordinate"/>
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:textSize="10sp"
+                    android:textColor="#BEA076"
+                    android:text="长沙市"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:layout_marginTop="@dimen/space_5"
+            android:background="@color/black"/>
+
+    </LinearLayout>
+
+</LinearLayout>

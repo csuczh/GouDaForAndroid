@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string-array name="gouda_viewpage_arrays">
+        <item>遛狗</item>
+        <item>相亲</item>
+        <item>寄养</item>
+    </string-array>
+
+    
+</resources>

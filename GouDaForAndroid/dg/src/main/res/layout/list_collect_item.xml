@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_card_collection"
+    android:padding="15dp"
+    android:background="@drawable/bg_white2gray_sel"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+        <!-- 头像 -->
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/msg_item_img_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:contentDescription="@string/app_name"
+            android:focusable="false"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_dg"/>
+    <!--用户信息-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 用户ID -->
+            <TextView
+                android:id="@+id/msg_item_text_uname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9C9CE"
+                android:text="阳辉的角度"
+                android:textSize="12sp" />
+            
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/msg_item_text_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#C9C9CE"
+                android:textSize="10sp"
+                android:text="2015.09.03"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_collection_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/black"
+            android:text="听别人说，狗狗每天洗澡对狗狗非常不好，真的吗？"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

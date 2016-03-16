@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_white2gray_sel"
+    android:orientation="horizontal" >
+
+    <!-- 排名索引-->
+    <TextView
+        android:id="@+id/tv_rank_index"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="24sp"
+        android:textColor="#EA5514"/>
+
+    <!-- 头像-->
+    <RelativeLayout
+        android:layout_width="55dp"
+        android:layout_height="55dp">
+
+        <!-- 发布者头像 -->
+
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/msg_item_img_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:contentDescription="@string/app_name"
+            android:focusable="false"
+            android:padding="2dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_dg"/>
+
+        <ImageView
+            android:id="@+id/iv_rank_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="4dp"
+            android:paddingRight="8dp"
+            android:src="@mipmap/ic_round_woman"/>
+
+    </RelativeLayout>
+
+    <!--用户信息-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:orientation="vertical" >
+        <!-- 用户ID -->
+        <TextView
+            android:id="@+id/msg_item_text_uname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="暮光之城"
+            android:textSize="12sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textSize="10sp"
+                android:textColor="#BEA076"
+                android:text="萌耀币："/>
+
+            <TextView
+                android:id="@+id/tv_meng_coins_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textSize="10sp"
+                android:textColor="#BEA076"
+                android:text="124512"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <!-- 用户标签-->
+            <TextView
+                android:id="@+id/tv_meng_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rank_icon"
+                android:layout_marginRight="5dp"
+                android:padding="5dp"
+                android:textSize="16sp"
+                android:textColor="@color/bg_gray"
+                android:text="顶级铲屎官"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

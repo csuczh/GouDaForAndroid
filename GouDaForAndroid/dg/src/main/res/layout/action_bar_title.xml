@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_top_bar"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/left_margin"
+        android:layout_marginRight="10dp">
+    <TextView android:id="@+id/select_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:textSize="@dimen/textview_size_14"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="@color/actionbar_normal"
+        android:text="@string/main_actionbar_name_select" />
+        <LinearLayout
+            android:id="@+id/switch_view"
+            android:layout_width="120dip"
+            android:layout_height="40dip"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_actionbar_corner"
+            >
+            <Button
+                android:id="@+id/button_scene"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="@dimen/textview_size_14"
+                android:textColor="@color/actionbar_normal"
+                android:text="@string/main_actionbar_name_scene"
+                android:background="@drawable/bg_actionbar_left_clicked"
+               />
+            <Button
+                android:id="@+id/button_find"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textview_size_14"
+                android:background="@drawable/bg_actionbar_right_normal"
+                android:text="@string/main_actionbar_name_find"
+               />
+        </LinearLayout>
+    <!--<com.dg.app.widget.SwitchView-->
+        <!--android:id="@+id/switch_view"-->
+        <!--android:layout_width="150dip"-->
+        <!--android:layout_height="100dip"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_marginLeft="4dip"-->
+        <!--/>-->
+        <RelativeLayout
+            android:layout_width="@dimen/space_100"
+            android:layout_height="@dimen/space_100"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+        <ImageView
+            android:id="@+id/chat_messages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_information"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/unread_msg_number"
+            android:layout_width="@dimen/space_20"
+            android:layout_height="@dimen/space_20"
+            android:layout_alignRight="@+id/chat_messages"
+            android:layout_alignTop="@+id/chat_messages"
+            android:background="@drawable/chat_history"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <!--<TextView android:id="@+id/scene_text"-->
+        <!--android:layout_width="90px"-->
+        <!--android:layout_height="55px"-->
+        <!--android:layout_marginLeft="25px"-->
+        <!--android:textSize="@dimen/text_size_20"-->
+        <!--android:textAlignment="center"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:background="@drawable/bg_actionbar_corner"-->
+        <!--android:text="@string/main_actionbar_name_scene" />-->
+
+    <!--<TextView android:id="@+id/find_text"-->
+        <!--android:layout_width="90px"-->
+        <!--android:layout_height="55px"-->
+        <!--android:textSize="@dimen/text_size_20"-->
+        <!--android:textAlignment="center"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:background="@drawable/bg_actionbar_corner"-->
+        <!--android:text="@string/main_actionbar_name_find" />-->
+
+</RelativeLayout>

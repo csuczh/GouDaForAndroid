@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:alpha="0.7"
+    android:background="@drawable/dialog_notice_corner">
+
+    <ImageView
+        android:id="@+id/iv_toast_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/whitebone"/>
+
+    <TextView
+        android:id="@+id/tv_toast_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:singleLine="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_12"
+        android:text="主人你成功\n关注了对方"/>
+
+
+</LinearLayout>

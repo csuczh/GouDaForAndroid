@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+    <ImageView
+        android:id="@+id/select_image_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@mipmap/ic_action_back"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_18"
+        android:textColor="@color/select_bar_text"
+        android:text="@string/actionbar_select"
+        android:layout_gravity="center"
+        />
+        <TextView
+            android:id="@+id/finish_select"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/text_size_18"
+            android:textColor="@color/select_bar_text"
+            android:text="@string/actionbar_finish"
+            android:layout_gravity="right"
+            android:gravity="center"
+            />
+    </FrameLayout>
+
+</LinearLayout>

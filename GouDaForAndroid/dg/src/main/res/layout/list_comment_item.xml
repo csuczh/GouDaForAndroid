@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_comments"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_white2gray_sel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--左侧圆形头像-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/riv_comment_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/app_name"
+            android:focusable="false"
+            android:padding="1dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+    </LinearLayout>
+    <!--右侧状态显示-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--状态头-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <!--顶部状态信息-->
+            <LinearLayout
+                android:id="@+id/rl_content"
+                android:layout_width="wrap_content"
+                android:layout_height="72dp"
+                android:padding="6dp">
+
+                <TextView
+                    android:id="@+id/tv_comment_subhead"
+                    style="@style/TextViewSubhead"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="豆子小姐" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_comment_caption"
+                    style="@style/TextViewCaption"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="@dimen/text_size_10"
+                    android:text="10-16 09:04"
+                    android:textColor="@color/txt_gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--状态正文-->
+        <TextView
+            android:id="@+id/tv_comment"
+            style="@style/TextViewBody"
+            android:layout_width="match_parent"
+            android:layout_marginTop="-48dp"
+            android:padding="6dp"
+            android:textColor="#C9C9CE"
+            android:textSize="@dimen/text_size_12"
+            android:text="从前有个人来到了油坊桥,后来他变成了吴彦祖" />
+
+    </LinearLayout>
+</LinearLayout>

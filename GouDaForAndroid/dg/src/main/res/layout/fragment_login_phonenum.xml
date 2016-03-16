@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/actionbar_login_phonenum" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_regist_phonenum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="手机号"
+                android:background="@drawable/editview_bg"
+                android:inputType="phone"
+                android:singleLine="true"
+                android:textColorHint="#C9C9CE"
+                android:textSize="@dimen/text_size_20" />
+
+            <EditText
+                android:id="@+id/et_regist_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:hint="设置6-18位密码"
+                android:background="@drawable/editview_bg"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColorHint="#C9C9CE"
+                android:textSize="@dimen/text_size_20" />
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_regist_checkcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="输入验证码"
+                    android:background="@drawable/editview_bg"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColorHint="#C9C9CE"
+                    android:textSize="@dimen/text_size_20" />
+                
+                <TextView
+                    android:id="@+id/tv_regist_getcheckcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#BEA076"
+                    android:textSize="@dimen/text_size_12"
+                    android:padding="@dimen/space_5"
+                    android:background="@drawable/btn_time_count_bg_normal"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/space_9"
+                    android:layout_marginRight="@dimen/space_10"
+                    android:text="获取验证码"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                
+                <CheckBox
+                    android:id="@+id/cb_readgouda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="我已经阅读并同意"/>
+
+                <TextView
+                    android:id="@+id/tv_gouda_protocol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lightblue"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="《狗搭用户协议》"/>
+
+                <TextView
+                    android:id="@+id/tv_checkcode_error"
+                    android:layout_marginLeft="@dimen/space_25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/text_size_12"
+                    android:text="验证码错误"/>
+                
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_nextstep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_30"
+            android:background="@color/bg_gray"
+            android:gravity="center"
+            android:padding="@dimen/space_10"
+            android:text="下一步"
+            android:textColor="#BEA076"
+            android:textSize="@dimen/text_size_25" />
+    </LinearLayout>
+
+</LinearLayout>

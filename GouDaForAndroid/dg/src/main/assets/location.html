@@ -1,0 +1,103 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script src="file:///android_asset/js/cycle.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/json_parse.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/json_parse_state.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/json2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/jquery.pager.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/map.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+        #l-map{height:100%;width:78%;float:left;border-right:2px solid #bcbcbc;}
+        #r-result{height:100%;width:20%;float:left;}
+    </style>
+	<script language="javascript" type="text/javascript">
+	<script language="JavaScript">
+</script>
+
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1PntCOXmHplLgbSMzm0Kvz0s">
+     </script>
+  	<title>添加多个标注点</title>
+</head>
+<body>
+<div id="allmap">
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.404, 39.915);
+	map.centerAndZoom(point, 15);
+	var str1="";
+
+	map.addEventListener("moveend",function(){
+	       var geoc = new BMap.Geocoder();
+		    var pt = map.getCenter();
+		    geoc.getLocation(pt, function(rs){
+			   var  addComp = rs.addressComponents;
+               window.str1=","+addComp.province + " " + addComp.city + " " + addComp.district + ","+pt.lng+" "+pt.lat+"," ;
+	         });
+
+	        if(str1!="")
+	        {
+              //调用本地java方法
+                window.WebViewJavascriptBridge.callHandler(
+                'submitFromWeb'
+                , {'param': encodeURI(str1)}
+                , function(responseData) {
+                } );
+	        }
+	});
+
+
+	//注册事件监听
+        function connectWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) {
+                callback(WebViewJavascriptBridge)
+            } else {
+                document.addEventListener(
+                    'WebViewJavascriptBridgeReady'
+                    , function() {
+                        callback(WebViewJavascriptBridge)
+                    },
+                    false
+                );
+            }
+        }
+        //注册回调函数，初始化函数
+        connectWebViewJavascriptBridge(function(bridge) {
+            bridge.init(function(message, responseCallback) {
+                console.log('JS got a message', message);
+                var data = {
+                    'Javascript Responds': 'Wee!'
+                };
+                console.log('JS responding with', data);
+                responseCallback(data);
+            });
+
+            bridge.registerHandler("functionInJs", function(data, responseCallback) {
+               // alert(data);
+                var strs=new Array();
+                strs=data.split(" ");
+                var lng=strs[0]*1;
+                var lat=strs[1]*1;
+                var point = new BMap.Point(lng, lat);
+	             map.centerAndZoom(point, 15);
+                var responseData = "Javascript Says Right back aka!";
+                responseCallback(responseData);
+            });
+        })
+
+</script>
+
+
+</div>
+</body>
+</html>
+
+

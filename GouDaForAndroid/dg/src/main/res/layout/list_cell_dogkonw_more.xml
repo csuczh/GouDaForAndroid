@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/space_20">
+    <org.kymjs.kjframe.widget.RoundImageView
+        android:id="@+id/more_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="gouzhi"
+        android:focusable="false"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentLeft="true"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@+id/more_image"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:text="dfdf"/>
+    <ImageView
+        android:id="@+id/more_forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_enter"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/space_3"
+        />
+</RelativeLayout>
+</LinearLayout>

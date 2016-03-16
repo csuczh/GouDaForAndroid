@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/actionbar_setting_updatepwd"/>
+
+    <LinearLayout
+        android:padding="@dimen/space_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_currentpwd"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="#C9C9CE"
+            android:background="@drawable/editview_bg"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textSize="12sp"
+            android:inputType="textPassword"
+            android:hint="当前密码"/>
+
+        <EditText
+            android:id="@+id/et_updatepwd"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="#C9C9CE"
+            android:background="@drawable/editview_bg"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textSize="12sp"
+            android:inputType="textPassword"
+            android:hint="修改密码"/>
+
+        <EditText
+            android:id="@+id/et_copypwd"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="#C9C9CE"
+            android:background="@drawable/editview_bg"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textSize="12sp"
+            android:inputType="textPassword"
+            android:hint="确认密码"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

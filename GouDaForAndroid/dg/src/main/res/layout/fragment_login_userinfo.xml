@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/actionbar_login_userinfo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/space_20"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:gravity="center_horizontal">
+            <!-- 我的头像 -->
+            <org.kymjs.kjframe.widget.RoundImageView
+                android:id="@+id/riv_login_avatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_add_sel"/>
+        </LinearLayout>
+
+        <!-- 登录信息-->
+        <LinearLayout
+            android:id="@+id/ll_login_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_regist_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="填写昵称"
+                android:background="@drawable/editview_bg"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColorHint="#C9C9CE"
+                android:textSize="@dimen/text_size_20" />
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/et_regist_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="选择性别"
+                    android:background="@drawable/editview_bg"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColorHint="#C9C9CE"
+                    android:textSize="@dimen/text_size_20" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/space_15"
+                    android:src="@mipmap/ic_item_goto_right_tip"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/et_regist_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="选择年龄"
+                    android:background="@drawable/editview_bg"
+                    android:singleLine="true"
+                    android:textColorHint="#C9C9CE"
+                    android:textSize="@dimen/text_size_20" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/space_15"
+                    android:src="@mipmap/ic_item_goto_right_tip"/>
+
+            </RelativeLayout>
+
+
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_userinfo_nextstep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_30"
+            android:background="@drawable/bg_yellow2gray_sel"
+            android:gravity="center"
+            android:padding="@dimen/space_10"
+            android:text="下一步"
+            android:textColor="#BEA076"
+            android:textSize="@dimen/text_size_25" />
+    </LinearLayout>
+
+</LinearLayout>

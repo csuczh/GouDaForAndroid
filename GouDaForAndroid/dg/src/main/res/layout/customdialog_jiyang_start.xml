@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+     >
+  <RelativeLayout
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:background="#BFA173"
+      android:gravity="center"
+      android:orientation="horizontal">
+      <Button
+          android:id="@+id/jiyang_start_cancel"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/space_18"
+          android:textColor="@color/white"
+         android:layout_alignParentLeft="true"
+          android:background="#BFA173"
+          android:text="@string/Location_cancel"/>
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/space_18"
+          android:textColor="@color/white"
+          android:layout_centerHorizontal="true"
+          android:background="#BFA173"
+          android:text="@string/Location_select"/>
+
+      <Button
+          android:id="@+id/jiyang_start_enter"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/space_18"
+          android:textColor="@color/white"
+          android:layout_alignParentRight="true"
+          android:background="#BFA173"
+          android:text="@string/Location_enter"/>
+
+
+  </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+
+       >
+        <DatePicker
+            android:id="@+id/jiyang_start_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:layout_centerInParent="true">
+
+        </DatePicker>
+
+    </RelativeLayout>
+
+</LinearLayout>

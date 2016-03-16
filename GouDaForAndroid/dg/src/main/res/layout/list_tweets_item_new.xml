@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_card_tweet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white2gray_sel"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_20"
+        android:paddingTop="@dimen/space_10">
+        <!--左侧圆形头像-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <org.kymjs.kjframe.widget.RoundImageView
+                android:id="@+id/msg_item_img_head"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:contentDescription="@string/app_name"
+                android:focusable="false"
+                android:padding="1dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+        </RelativeLayout>
+        <!--右侧状态显示-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--状态头-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <!--顶部状态信息-->
+                <RelativeLayout
+                    android:id="@+id/rl_content"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_weight="1"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_subhead"
+                        style="@style/TextViewSubhead"
+                        android:text="豆子小姐" />
+
+                    <TextView
+                        android:id="@+id/tv_caption"
+                        style="@style/TextViewCaption"
+                        android:layout_alignParentBottom="true"
+                        android:text="0.12km"
+                        android:textColor="@color/txt_gray" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_arrow_down" />
+
+            </LinearLayout>
+
+            <!--状态正文-->
+            <TextView
+                android:id="@+id/tv_content"
+                style="@style/TextViewBody"
+                android:layout_width="match_parent"
+                android:layout_marginTop="-16dp"
+                android:padding="16dp"
+                android:text="从前有个人来到了油坊桥,后来他变成了吴彦祖" />
+
+            <!-- 状态图片 -->
+            <FrameLayout
+                android:id="@+id/moment_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <!--多图显示-->
+                <com.dg.app.ui.widget.WrapHeightGridView
+                    android:id="@+id/gv_images"
+                    style="@style/GridViewImages"
+                    android:layout_width="272dp"
+                    android:layout_height="match_parent" />
+
+                <!--单图显示-->
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <!--底部信息展示-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <!--发布时间-->
+                <TextView
+                    android:id="@+id/tv_tweet_time"
+                    style="@style/TextViewCaption"
+                    android:layout_alignParentBottom="true"
+                    android:text="9小时前"
+                    android:textColor="@color/txt_gray" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/iv_tweet_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_offlike" />
+
+                <TextView
+                    android:id="@+id/tv_tweet_like_num"
+                    style="@style/TextViewCaption"
+                    android:layout_alignParentBottom="true"
+                    android:text="127"
+                    android:textColor="@color/txt_gray" />
+
+                <ImageView
+                    android:id="@+id/iv_tweet_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_comment" />
+
+                <TextView
+                    android:id="@+id/tv_tweet_comment_num"
+                    style="@style/TextViewCaption"
+                    android:layout_alignParentBottom="true"
+                    android:text="127"
+                    android:textColor="@color/txt_gray" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:layout_marginLeft="7dp"-->
+    <!--android:layout_marginRight="7dp"-->
+    <!--android:contentDescription="@null"-->
+    <!--android:scaleType="fitXY"-->
+    <!--android:src="@mipmap/ic_axis_top_line" />-->
+    <!--分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/divider_gray" />
+
+
+</LinearLayout>

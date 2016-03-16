@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!--动态1-->
+    <LinearLayout
+        android:id="@+id/ll_card_new_moment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_5"
+        android:background="@drawable/bg_white2gray_sel"
+        android:orientation="horizontal">
+        <!--日-->
+        <TextView
+            android:id="@+id/room_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/space_10"
+            android:textSize="@dimen/textview_size_26"
+            android:textColor="#C9C9CE"
+            android:textStyle="bold"
+            android:text="19"/>
+        <!--月份-->
+        <TextView
+            android:id="@+id/room_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textview_size_14"
+            android:gravity="center"
+            android:textColor="#C9C9CE"
+            android:text="六月"
+            android:layout_marginRight="@dimen/space_5"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_25"
+            android:orientation="horizontal">
+
+            <!--动态照片-->
+            <ImageView
+                android:id="@+id/room_picture"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_dg"/>
+
+            <!--动态文字-->
+            <TextView
+                android:id="@+id/room_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_15"
+                android:textSize="@dimen/textview_size_14"
+                android:text="以后每一天都要和我的呆呆在一起"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_yaoqing_title"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/main_yellow"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView android:id="@+id/iv_invitation_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/ic_return"
+             />
+        <LinearLayout
+            android:id="@+id/switch_view"
+            android:layout_width="220dip"
+            android:layout_height="40dip"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_actionbar_corner">
+            <Button
+                android:id="@+id/button_liugou"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/bg_actionbar_left_clicked"
+                android:textSize="@dimen/textview_size_14"
+                android:textColor="@color/actionbar_normal"
+                android:text="遛狗"
+                />
+            <Button
+                android:id="@+id/button_xiangqin"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/bg_actionbar_corner"
+                android:textSize="@dimen/textview_size_14"
+                android:textColor="@color/white"
+                android:text="相亲"
+                />
+            <Button
+                android:id="@+id/button_jiyang"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_actionbar_corner"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textview_size_14"
+                android:gravity="center"
+                android:text="寄养"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

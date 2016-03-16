@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/space_20"
+    android:orientation="vertical" >
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="end">-->
+        <!--<TextView-->
+            <!--android:id="@+id/tv_jumpover"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="@dimen/text_size_14"-->
+            <!--android:text="跳过"/>-->
+    <!--</RelativeLayout>-->
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/space_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <!-- 我的头像 -->
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/riv_login_avatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/ic_dg" />
+    </LinearLayout>
+
+    <!-- 登录信息-->
+    <LinearLayout
+        android:id="@+id/ll_login_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/et_login_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:phoneNumber="true"
+            android:digits="1234567890"
+            android:background="@drawable/editview_bg"
+            android:hint="手机号"
+            android:textSize="@dimen/text_size_20"
+            android:textColorHint="#C9C9CE"/>
+
+        <EditText
+            android:id="@+id/et_login_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/editview_bg"
+            android:singleLine="true"
+            android:password="true"
+            android:hint="密码"
+            android:textSize="@dimen/text_size_20"
+            android:textColorHint="#C9C9CE"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+            <TextView
+                android:id="@+id/tv_forgetpwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#BEA076"
+                android:textSize="@dimen/text_size_10"
+                android:text="忘记密码？"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_login_btn"
+        android:layout_marginTop="@dimen/space_30"
+        android:padding="@dimen/space_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="登录"
+        android:background="@drawable/bg_yellow2gray_sel"
+        android:textColor="#BEA076"
+        android:textSize="@dimen/text_size_25"/>
+
+    <TextView
+        android:id="@+id/tv_regist_btn"
+        android:layout_marginTop="@dimen/space_20"
+        android:padding="@dimen/space_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_yellow2gray_sel"
+        android:text="注册"
+        android:gravity="center"
+        android:textColor="#BEA076"
+        android:textSize="@dimen/text_size_25"/>
+
+
+</LinearLayout>

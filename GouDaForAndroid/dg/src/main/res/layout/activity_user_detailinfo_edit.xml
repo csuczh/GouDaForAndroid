@@ -1,0 +1,310 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_mydetailinfo_edit"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <include layout="@layout/actionbar_my_detailinfo_edit"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_30">
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true">
+            <ImageView
+                android:id="@+id/iv_img_add1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/splash_box_bg"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:padding="2dp"
+                android:src="@drawable/selector_image_add" />
+
+            <!--删除按钮，发布状态添加图片时用到-->
+            <ImageView
+                android:id="@+id/iv_delete_image1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:padding="2dp"
+                android:src="@mipmap/image_delete"
+                android:visibility="gone"
+                 />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true">
+            <ImageView
+                android:id="@+id/iv_img_add2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/splash_box_bg"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:padding="2dp"
+                android:src="@drawable/selector_image_add" />
+
+            <!--删除按钮，发布状态添加图片时用到-->
+            <ImageView
+                android:id="@+id/iv_delete_image2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:padding="2dp"
+                android:src="@mipmap/image_delete"
+                android:visibility="gone"
+                />
+        </RelativeLayout>>
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:id="@+id/iv_img_add3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/splash_box_bg"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:padding="2dp"
+                android:src="@drawable/selector_image_add" />
+
+            <!--删除按钮，发布状态添加图片时用到-->
+            <ImageView
+                android:id="@+id/iv_delete_image3"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:padding="2dp"
+                android:src="@mipmap/image_delete"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+        <!--昵称 -->
+        <RelativeLayout
+            android:id="@+id/rl_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingLeft="@dimen/space_10"
+                android:textColor="@color/black"
+                android:text="昵称"/>
+            <ImageView
+                android:id="@+id/iv_nickname_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingRight="@dimen/space_10"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingRight="@dimen/space_10"
+                android:layout_toLeftOf="@id/iv_nickname_arrow"
+                android:textColor="#C9C9CE"
+                android:text=""/>
+
+        </RelativeLayout>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+        <!--性别-->
+        <RelativeLayout
+            android:id="@+id/rl_sex"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingLeft="@dimen/space_10"
+                android:textColor="@color/black"
+                android:text="性别"/>
+
+            <ImageView
+                android:id="@+id/iv_sex_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingRight="@dimen/space_10"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+
+            <TextView
+                android:id="@+id/tv_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingRight="@dimen/space_10"
+                android:layout_toLeftOf="@id/iv_sex_arrow"
+                android:textColor="#C9C9CE"
+                android:text=""/>
+
+        </RelativeLayout>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+        <!-- 年龄-->
+        <RelativeLayout
+            android:id="@+id/rl_age"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingLeft="@dimen/space_10"
+                android:textColor="@color/black"
+                android:text="年龄"/>
+
+            <ImageView
+                android:id="@+id/iv_age_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingRight="@dimen/space_10"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingRight="@dimen/space_10"
+                android:layout_toLeftOf="@id/iv_age_arrow"
+                android:textColor="#C9C9CE"
+                android:text=""/>
+
+        </RelativeLayout>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+        <!-- 职业-->
+        <RelativeLayout
+            android:id="@+id/rl_job"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingLeft="@dimen/space_10"
+                android:textColor="@color/black"
+                android:text="职业"/>
+
+            <ImageView
+                android:id="@+id/iv_job_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingRight="@dimen/space_10"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+
+            <TextView
+                android:id="@+id/tv_job"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingRight="@dimen/space_10"
+                android:layout_toLeftOf="@id/iv_job_arrow"
+                android:textColor="#C9C9CE"
+                android:text=""/>
+
+        </RelativeLayout>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+        <!-- 标签-->
+        <RelativeLayout
+            android:id="@+id/rl_tags"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="@dimen/space_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingLeft="@dimen/space_10"
+                android:textColor="@color/black"
+                android:text="标签"/>
+            <ImageView
+                android:id="@+id/iv_tag_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingRight="@dimen/space_10"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+            <TextView
+                android:id="@+id/tv_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:paddingRight="@dimen/space_10"
+                android:layout_toLeftOf="@id/iv_tag_arrow"
+                android:textColor="#C9C9CE"
+                android:text=""/>
+        </RelativeLayout>
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

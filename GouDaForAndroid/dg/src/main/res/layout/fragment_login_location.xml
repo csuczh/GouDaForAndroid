@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/actionbar_login_location" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/space_20">
+
+        <TextView
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_45"
+            android:textSize="@dimen/text_size_26"
+            android:text="让您找到身边的TA!"/>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/space_45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/et_location_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/bg_gray"
+                android:background="@drawable/editview_bg"
+                android:hint="选择您现在的地区位置"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/space_15"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_welcome_entergouda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_45"
+            android:gravity="center"
+            android:padding="@dimen/space_10"
+            android:background="@color/bg_gray"
+            android:text="注册"
+            android:textColor="#BEA076"
+            android:textSize="@dimen/text_size_20" />
+
+    </LinearLayout>
+
+</LinearLayout>

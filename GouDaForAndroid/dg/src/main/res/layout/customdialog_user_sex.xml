@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#BFA173"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:orientation="horizontal">
+      <Button
+          android:id="@+id/age_cancel"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/space_18"
+          android:textColor="@color/white"
+          android:layout_gravity="left"
+          android:background="#BFA173"
+          android:text="@string/Location_cancel"/>
+
+      <Button
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/space_18"
+          android:textColor="@color/white"
+          android:layout_gravity="center"
+          android:background="#BFA173"
+          android:text="@string/Location_select"/>
+
+      <Button
+          android:id="@+id/age_enter"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/space_18"
+          android:textColor="@color/white"
+          android:layout_gravity="right"
+          android:background="#BFA173"
+          android:text="@string/Location_enter"/>
+
+
+  </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       >
+        <com.dg.app.widget.Wheel.WheelView
+            android:id="@+id/wv_user_sex"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </com.dg.app.widget.Wheel.WheelView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

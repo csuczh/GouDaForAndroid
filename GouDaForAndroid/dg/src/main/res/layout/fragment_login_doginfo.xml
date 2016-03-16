@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/actionbar_login_doginfo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/space_20"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/space_20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <!-- 我的头像 -->
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/riv_dg_regist_avatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/ic_dg" />
+    </LinearLayout>
+
+    <!-- 登录信息-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/et_regist_dogname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editview_bg"
+            android:singleLine="true"
+            android:hint="填写狗狗昵称"
+            android:textSize="@dimen/text_size_20"
+            android:textColorHint="#C9C9CE"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20">
+            <TextView
+                android:id="@+id/et_regist_dogage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:paddingRight="@dimen/space_25"
+                android:background="@drawable/editview_bg"
+                android:hint="选择狗狗年龄"
+                android:textSize="@dimen/text_size_20"
+                android:textColorHint="#C9C9CE"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/space_15"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20">
+
+            <TextView
+                android:id="@+id/et_regist_dogsex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editview_bg"
+                android:singleLine="true"
+                android:paddingRight="@dimen/space_25"
+                android:hint="选择狗狗性别"
+                android:textSize="@dimen/text_size_20"
+                android:textColorHint="#C9C9CE"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/space_15"
+                android:src="@mipmap/ic_item_goto_right_tip"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_regist_dogtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/editview_bg"
+            android:singleLine="true"
+            android:inputType="text"
+            android:hint="选择狗狗品种(可不填)"
+            android:textSize="@dimen/text_size_20"
+            android:textColorHint="#C9C9CE"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_regist_dgnextstep"
+        android:layout_marginTop="@dimen/space_30"
+        android:padding="@dimen/space_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/bg_gray"
+        android:text="下一步"
+        android:textColor="#BEA076"
+        android:textSize="@dimen/text_size_25"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,105 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/titlebar_give_advice"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_yellow"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView android:id="@+id/iv_give_advice_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/ic_return"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#bea076"
+                android:textSize="16sp"
+                android:text="意见反馈"/>
+
+
+            <TextView
+                android:id="@+id/tv_advice_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提交"
+                android:textSize="14dp"
+                android:textColor="#BEA076"
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_20">
+
+        <TextView
+            android:id="@+id/tv_first_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_10"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/actionbar_normal"
+            android:text="我们将非常感谢你的意见反馈"/>
+
+
+        <EditText
+            android:id="@+id/et_advice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_first_note"
+            android:background="@drawable/editview_bg"
+            android:gravity="top"
+            android:maxLength="140"
+            android:hint="输入意见反馈"
+            android:textColorHint="#C9C9CE"
+            android:minLines="5"/>
+
+            <TextView
+            android:id="@+id/tv_second_note"
+            android:padding="@dimen/space_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/et_advice"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/actionbar_normal"
+            android:textAlignment="center"
+            android:text="如果想加入我们的内测群，提前感受产品体验，那就留下您的联系方式吧"/>
+
+        <EditText
+            android:id="@+id/et_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_second_note"
+            android:background="@drawable/editview_bg"
+            android:hint="邮箱或电话（选填项）"
+            android:textColorHint="#C9C9CE"
+            android:maxLines="5"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

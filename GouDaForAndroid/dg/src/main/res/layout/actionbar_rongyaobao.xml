@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_rongyaobang_title"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/main_yellow"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView android:id="@+id/iv_rongyaobang_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/ic_return"
+             />
+        <LinearLayout
+            android:id="@+id/switch_view"
+            android:layout_width="120dip"
+            android:layout_height="40dip"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_actionbar_corner">
+            <Button
+                android:id="@+id/button_coin"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/bg_actionbar_left_clicked"
+                android:textSize="@dimen/textview_size_14"
+                android:textColor="@color/actionbar_normal"
+                android:text="萌耀币"
+                />
+            <Button
+                android:id="@+id/button_rank"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_actionbar_corner"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textview_size_14"
+                android:gravity="center"
+                android:text="萌耀榜"
+                />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/iv_sharerank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/ic_more"
+            android:padding="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/viewpage_fragement"
+    android:orientation="vertical" >
+
+
+
+
+    <com.github.lzyzsd.jsbridge.BridgeWebView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.github.lzyzsd.jsbridge.BridgeWebView>
+
+    <RelativeLayout
+        android:id="@+id/main_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_top_bar"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:background="@color/main_yellow">
+       <include layout="@layout/action_bar_title"/>
+
+    </RelativeLayout>
+
+    <com.dg.app.widget.PagerSlidingTabStrip
+        android:id="@+id/pager_tabstrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_top_bar"
+        android:background="?attr/windows_bg"
+        app:allowWidthFull="true"
+        app:slidingBlock="?attr/sliding_block_bg"
+        >
+    </com.dg.app.widget.PagerSlidingTabStrip>
+
+    <View
+        android:id="@+id/view_pager_line"
+        android:layout_width="match_parent"
+        android:layout_below="@id/pager_tabstrip"
+        android:layout_height="1px"
+        android:background="?attr/lineColor" />
+    <!--<ImageView-->
+        <!--android:id="@+id/markerCenter"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:background="@drawable/icon_marka" />-->
+
+    <ImageView
+        android:id="@+id/my_location"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/space_10"
+        android:background="@color/red"
+         />
+    <ImageView
+        android:id="@+id/WriteMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/command" />
+
+    <FrameLayout
+        android:id="@+id/findview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_top_bar"
+        android:visibility="gone"
+        >
+
+    </FrameLayout>
+
+    <com.dg.app.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        style="@style/fill_fill"
+        android:visibility="gone" />
+
+</RelativeLayout>

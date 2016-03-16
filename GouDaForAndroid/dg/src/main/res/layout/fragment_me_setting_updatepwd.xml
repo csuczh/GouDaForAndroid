@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFF4">
+
+    <include android:layout="@layout/actionbar_setting_updatepwd"/>
+
+    <!-- 第一类-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_20"
+        android:orientation="vertical">
+        
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:padding="@dimen/space_8"
+            android:background="@drawable/bg_edittext"
+            android:textSize="@dimen/text_size_12"
+            android:textColorHint="#C9C9CE"
+            android:hint="当前密码"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/space_25"
+            android:singleLine="true"
+            android:padding="@dimen/space_8"
+            android:background="@drawable/bg_edittext"
+            android:textSize="@dimen/text_size_12"
+            android:textColorHint="#C9C9CE"
+            android:hint="修改密码"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/space_25"
+            android:singleLine="true"
+            android:padding="@dimen/space_8"
+            android:background="@drawable/bg_edittext"
+            android:textSize="@dimen/text_size_12"
+            android:textColorHint="#C9C9CE"
+            android:hint="确认密码"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

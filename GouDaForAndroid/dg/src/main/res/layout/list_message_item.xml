@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white2gray_sel"
+    android:id="@+id/ll_card_message"
+    android:padding="@dimen/space_10"
+    android:orientation="horizontal" >
+
+        <!--头像-->
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/msg_item_img_head"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="8dp"
+            android:focusable="false"
+            android:padding="1dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_dg"/>
+
+        <!-- 消息-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/space_5"
+            android:orientation="vertical" >
+
+            <!-- 用户ID -->
+
+            <TextView
+                android:id="@+id/tv_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:text="小呆潇"/>
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#9B9B9B"
+                android:textSize="12sp"
+                android:text="我也好想有一个这样的男朋友！我也好想有一个这样的男朋友！我也好想有一个这样的男朋友！"/>
+
+            <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:src="@mipmap/ic_like"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#9B9B9B"
+                android:textSize="12sp"
+                android:text="8月21日"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_orign_moment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_5">
+            <ImageView
+                android:id="@+id/iv_moment_img"
+                android:layout_width="@dimen/space_58"
+                android:layout_height="@dimen/space_58"
+                android:visibility="gone"
+                android:src="@mipmap/ic_dg"/>
+
+            <TextView
+                android:id="@+id/tv_moment_content"
+                android:layout_width="@dimen/space_58"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_white2gray_sel"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="#9B9B9B"
+                android:text="是这样的呢，动物如果相处久了的，会。。。。。"/>
+        </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,679 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script src="file:///android_asset/js/cycle.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/json_parse.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/json_parse_state.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/json2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/jquery.pager.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+    <script src="file:///android_asset/js/map.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+        #l-map{height:100%;width:78%;float:left;border-right:2px solid #bcbcbc;}
+        #r-result{height:100%;width:20%;float:left;}
+    </style>
+    <style type="text/css">
+        .anchorBL{
+        display:none;
+        }
+    </style>
+	<script language="javascript" type="text/javascript">
+	<script language="JavaScript">
+</script>
+
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1PntCOXmHplLgbSMzm0Kvz0s">
+     </script>
+  	<title>添加多个标注点</title>
+</head>
+<body>
+<div id="allmap">
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.404, 39.915);
+	map.centerAndZoom(point, 12);
+	map.setMaxZoom(17);
+	map.setMapStyle({
+  styleJson:[
+          {
+                    "featureType": "road",
+                    "elementType": "all",
+                    "stylers": {
+                              "lightness": 20
+                    }
+          },
+          {
+                    "featureType": "highway",
+                    "elementType": "geometry",
+                    "stylers": {
+                              "color": "#cccccc"
+                    }
+          },
+          {
+                    "featureType": "railway",
+                    "elementType": "all",
+                    "stylers": {
+                              "visibility": "off"
+                    }
+          },
+          {
+                    "featureType": "local",
+                    "elementType": "labels",
+                    "stylers": {
+                              "visibility": "off"
+                    }
+          },
+          {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": {
+                              "color": "#9fc5e8"
+                    }
+          },
+          {
+                    "featureType": "land",
+                    "elementType": "all",
+                    "stylers": {
+                              "color": "#f9f9f9"
+                    }
+          },
+          {
+                    "featureType": "arterial",
+                    "elementType": "all",
+                    "stylers": {
+                              "hue": "#fff2cc"
+                    }
+          },
+          {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": {
+                              "visibility": "off"
+                    }
+          },
+          {
+                    "featureType": "building",
+                    "elementType": "all",
+                    "stylers": {
+                              "visibility": "on"
+                    }
+          }
+]
+       });
+
+	var str1="";
+	var points=[];
+
+	//计算sn值得ak，sk
+	var ak="GTHzlUeOj8GotfIr1NZ4VTqt";
+	var sk="UvcvrwRoRRMOx9FjGotGNMcTU2ZWwYym";
+	var tableid="123182";
+
+   //筛选条件的变量
+     var onoff=false;
+     var region="长沙市";
+	var filter="";
+    var user_sex="";
+	var dog_sex="";
+	var ageMax="";
+	var ageMin="";
+	var location11="";
+
+
+
+	var province="";
+	var city="";
+	var dist="";
+    var lgt=116.404;
+    var lat=39.915;
+
+    var is_setviewport=true;
+    var is_setcenter=true;
+    var is_setfiltercenter=true;
+
+    var center_lgt=lgt;
+    var center_lat=lat;
+
+    var image_url="http://www.goumatch.com/";
+
+    function dealwithAttributes(attributes)
+    {
+        var select=json_parse(attributes);
+        onoff=select.onoff;
+        user_sex=select.peopleSex;
+        dog_sex =select.dogSex;
+
+         //省，市，区
+        province=select.province;
+        city=select.city;
+        dist=select.dist;
+        //年龄最大，年龄最小
+        ageMax=select.ageMax;
+        ageMin=select.ageMin;
+        //地理位置的经纬度
+        lgt=select.lgt*1;
+        lat=select.lat*1;
+
+       //设置当前的类型
+        if(select.type==0)
+        {
+           tableid="123182";
+        }
+        else if(select.type==1)
+        {
+           tableid="123858";
+        }
+        else {
+           tableid="123859";
+        }
+
+
+    }
+
+    //获得搜索本地的Filter
+    function getLocalMap()
+    {
+        var localMap=new Map();
+
+        if(onoff==false)
+        {
+           localMap.put("region",region);
+           return localMap;
+        }
+        if(dist=="其他"||dist=="")
+        {
+           region=city;
+        }else
+        {
+           region=dist;
+        }
+
+        var filterstr="";
+        if(user_sex!=2)
+        {
+           filterstr+="user_sex:["+user_sex+"]|";
+        }
+        if(dog_sex!=2)
+        {
+           filterstr+="dog_sex:["+dog_sex+"]|";
+        }
+        if(ageMax!="")
+        {
+           filterstr+="user_age:"+ageMin+","+ageMax+"|";
+        }
+        filterstr=filterstr.substring(0, filterstr.length-1);
+
+        localMap.put("filter",filterstr);
+        return localMap;
+    }
+     //获得搜索附件的Filter
+    function getNearByMap()
+    {
+         var nearbyMap=new Map();
+         var geostr="";
+         geostr=lgt+","+lat;
+         nearbyMap.put("location",geostr);
+         if(onoff==false)
+        {
+           return nearbyMap;
+        }
+
+        var filterstr="";
+        if(user_sex!=2)
+        {
+           filterstr+="user_sex:["+user_sex+"]|";
+        }
+        if(dog_sex!=2)
+        {
+           filterstr+="dog_sex:["+dog_sex+"]|";
+        }
+        if(ageMax!="")
+        {
+           filterstr+="user_age:"+ageMin+","+ageMax+"|";
+        }
+        filterstr=filterstr.substring ( 0, filterstr.length-1);
+        nearbyMap.put("filter",filterstr);
+        return nearbyMap;
+
+      }
+
+// 编写自定义函数,创建标注
+	function addMarker(point){
+	  var myIcon=new BMap.Icon("file:///android_asset/images/icon_gcoding.png",new BMap.Size(45,46));
+	  var marker = new BMap.Marker(point,{icon:myIcon});
+	  map.addOverlay(marker);
+	  marker.addEventListener("click",function(){
+             window.WebViewJavascriptBridge.callHandler(
+                'showDialog'
+                , {'param': "s"}
+                , function(responseData) {
+
+                } );
+
+	  });
+	}
+	// 随机向地图添加10个标注
+	var bounds = map.getBounds();
+	var sw = bounds.getSouthWest();
+	var ne = bounds.getNorthEast();
+	var lngSpan = Math.abs(sw.lng - ne.lng);
+	var latSpan = Math.abs(ne.lat - sw.lat);
+	//for (var i = 0; i < 5; i ++) {-->
+		//var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));-->
+		//addMarker(point);-->
+	//}
+
+	map.addEventListener("dragend",function(){
+	       var geoc = new BMap.Geocoder();
+		    var pt = map.getCenter();
+             lgt=pt.lng;
+             lat=pt.lat;
+
+             center_lgt=lgt;
+             center_lat=lat;
+             is_setviewport=false;
+               is_setcenter=true;
+               is_setfiltercenter=false;
+
+             var data2 = new Map();
+	         data2=getNearByMap();
+	         data2.put("location",lgt+","+lat);
+             data2.put("radius","30000");
+             //alert(data2);
+             searchNearby(data2,tableid,ak,sk);
+		     geoc.getLocation(pt, function(rs){
+			   var  addComp = rs.addressComponents;
+               window.str1=addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber;
+	         });
+
+	        if(str1!="")
+	        {
+              //调用本地java方法
+                window.WebViewJavascriptBridge.callHandler(
+                'submitFromWeb'
+                , {'param': encodeURI(str1)}
+                , function(responseData) {
+                } );
+	        }
+	});
+
+
+	//注册事件监听
+        function connectWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) {
+                callback(WebViewJavascriptBridge)
+            } else {
+                document.addEventListener(
+                    'WebViewJavascriptBridgeReady'
+                    , function() {
+                        callback(WebViewJavascriptBridge)
+                    },
+                    false
+                );
+            }
+        }
+        //注册回调函数，初始化函数
+        connectWebViewJavascriptBridge(function(bridge) {
+            bridge.init(function(message, responseCallback) {
+                console.log('JS got a message', message);
+                var data = {
+                    'Javascript Responds': 'Wee!'
+                };
+                console.log('JS responding with', data);
+                responseCallback(data);
+            });
+
+            bridge.registerHandler("functionInJs", function(data, responseCallback) {
+               // alert(data);
+                var obj=json_parse(data);
+                var responseData = "Javascript Says Right back aka!";
+                responseCallback(responseData);
+            });
+            bridge.registerHandler("functionSenFilter", function(data, responseCallback) {
+                //alert(data);
+                dealwithAttributes(data);
+                var data1 = new Map();
+                data1=getLocalMap();
+                data1.put("region", region);
+                //alert(data1);
+                  is_setviewport=true;
+                 is_setcenter=false;
+                 is_setfiltercenter=true;
+                searchLocal(data1,tableid,ak,sk);
+                var responseData = "Javascript Says Right back aka!";
+                responseCallback(responseData);
+            });
+            bridge.registerHandler("functionSenInvite", function(data, responseCallback) {
+                //alert(data);
+                var invite_strs=new Array();
+                invite_strs=data.split("/");
+                var lng=+invite_strs[0];
+                var lat=+invite_strs[1];
+                var invite_id=invite_strs[2];
+                var dog_sex=+invite_strs[3];
+               // alert(lng+"---->"+lat+"------->"+invite_id+"----->"+dog_sex+"");
+                 var myIcon=new Object();
+                  if(dog_sex==0)
+        	  {
+
+        	       myIcon=new BMap.Icon("file:///android_asset/images/ic_location_blue.png",new BMap.Size(45,46));
+        	  }
+        	  else
+        	  {
+        	       myIcon=new BMap.Icon("file:///android_asset/images/ic_location_red.png",new BMap.Size(45,46));
+        	  }
+        	   var point = new BMap.Point(lng,lat ),
+                   marker = new BMap.Marker(point,{icon:myIcon});
+        	    marker.addEventListener("click",function(){
+                       window.WebViewJavascriptBridge.callHandler(
+                         'showDialog'
+                         , {'param': ","+invite_id+","}
+                         , function(responseData) {
+
+                       } );
+
+	           });
+	           map.addOverlay(marker);
+
+
+
+            });
+
+
+            bridge.registerHandler("functionlocation", function(data, responseCallback) {
+               // alert(data);
+                 var strs=new Array();
+                strs=data.split(" ");
+               lgt=strs[0]*1;
+               lat=strs[1]*1;
+               is_setviewport=true;
+               is_setcenter=true;
+               is_setfiltercenter=false;
+
+              center_lgt=lgt;
+              center_lat=lat;
+
+               region=strs[2];
+             var point = new BMap.Point(lgt, lat);
+	         map.centerAndZoom(point, 15);
+	         var data3 = new Map();
+	         data3=getNearByMap();
+	         data3.put("location",lgt+","+lat);
+             data3.put("radius","30000");
+            // alert(data3);
+             searchNearby(data3,tableid,ak,sk);
+
+                var responseData = "Javascript Says Right back aka!";
+                responseCallback(responseData);
+            });
+        })
+    /**
+     * 渲染地图模式
+     * @param result
+     * @param page
+     */
+    function renderMap(res) {
+        var content = res.contents;
+        map.clearOverlays();
+        points.length = 0;
+        $.each(content, function(i, item){
+        	  var myIcon=new Object();
+        	  if(typeof(item.dog_logo)!="undefined")
+        	  {
+        	     var str=item.dog_logo;
+        	     var strs=new Array();//定义一数组
+        	     strs=str.split("/");
+
+        	     if(item.dog_sex==0)
+        	     {
+        	        var url="";
+        	        for(var j=0;j<strs.length-1;j++)
+        	        {
+                         url+="/"+strs[j];
+        	        }
+                    url+="/"+"blue_"+strs[strs.length-1];
+
+                    if(CheckImgExists(image_url+url))
+                    {
+        	          myIcon=new BMap.Icon(image_url+url,new BMap.Size(45,46));
+        	          }
+        	        else{
+        	           myIcon=new BMap.Icon("file:///android_asset/images/ic_location_blue.png",new BMap.Size(45,46));
+
+        	        }
+        	     }
+        	    else
+        	   {
+        	        var url="";
+        	        for(var j=0;j<str.length-1;j++)
+        	        {
+                         url+="/"+strs[j];
+
+        	        }
+                    url+="/"+"red_"+strs[strs.length-1];
+                    if(CheckImgExists(image_url+url))
+        	          myIcon=new BMap.Icon(image_url+url,new BMap.Size(45,46));
+        	        else{
+        	           myIcon=new BMap.Icon("file:///android_asset/images/ic_location_red.png",new BMap.Size(45,46));
+
+        	        }
+        	    }
+
+        	  }
+              else{
+        	      if(item.dog_sex==0)
+        	     {
+
+        	        myIcon=new BMap.Icon("file:///android_asset/images/ic_location_blue.png",new BMap.Size(45,46));
+        	     }
+        	    else
+        	   {
+        	       myIcon=new BMap.Icon("file:///android_asset/images/ic_location_red.png",new BMap.Size(45,46));
+        	    }
+        	}
+        	  if(Math.round(new Date().getTime()/1000)<=item.invalid_time)
+        	  {
+
+                   var point = new BMap.Point(item.location[0], item.location[1]),
+                   marker = new BMap.Marker(point,{icon:myIcon});
+                   var invite_id="";
+                   if(tableid=="123182")
+                   {
+                       invite_id=item.walk_id+"";
+                    }
+                    if(tableid=="123858")
+                   {
+                       invite_id=item.date_id+"";
+                   }
+                    if(tableid=="123859")
+                   {
+                     invite_id=item.foster_id+"";
+                    }
+
+                   marker.addEventListener("click",function(){
+                       window.WebViewJavascriptBridge.callHandler(
+                         'showDialog'
+                         , {'param': ","+invite_id+","}
+                         , function(responseData) {
+
+                       } );
+
+	           });
+                points.push(point);
+                map.addOverlay(marker);
+               }
+
+        });
+        if(is_setcenter){
+        var myIcon=new Object();
+          myIcon=new BMap.Icon("file:///android_asset/images/icon_gcoding.png",new BMap.Size(45,46));
+         var point = new BMap.Point(center_lgt, center_lat),
+                   marker = new BMap.Marker(point,{icon:myIcon});
+        // points.push(point);
+          map.addOverlay(marker);
+        }
+       if(is_setviewport)
+          map.setViewport(points);
+
+        if(is_setfiltercenter)
+        {
+          var pt = map.getCenter();
+          var myIcon=new Object();
+          myIcon=new BMap.Icon("file:///android_asset/images/icon_gcoding.png",new BMap.Size(45,46));
+         var point = new BMap.Point(pt.lng, pt.lat),
+                   marker = new BMap.Marker(point,{icon:myIcon});
+          points.push(point);
+          map.addOverlay(marker);
+        }
+    };
+
+//对请求的url的参数值进行编码
+function queryEncode(params)
+{
+	var str = '';
+	params.each(function(key,value,index){
+        str +=key+"="+(encodeURIComponent(value))+"&";
+    });
+
+	 return str.substring ( 0, str.length-1);
+}
+
+//对请求的url的参数值进行编码
+function queryEncodeNearby(params)
+{
+	var str = '';
+	params.each(function(key,value,index){
+        str +=key+"=";
+        var ss=new Array();
+        ss=value.split(",");
+        if(ss.length>0)
+        {
+            for(var i=0;i<ss.length;i++)
+            {
+               str+=encodeURIComponent(ss[i])+",";
+            }
+            str=str.substring ( 0, str.length-1);
+            str+="&";
+        }
+        else{
+               str+=(encodeURIComponent(value))+"&";
+        }
+    });
+
+	 return str.substring ( 0, str.length-1);
+}
+//计算sn值
+function caculateAKSN(sk, url, querystring_arrays) {
+
+    var querystring = queryEncode(querystring_arrays);
+	var temp=encodeURIComponent(url+"?"+querystring+sk);
+	return $.md5(temp);
+}
+
+//计算nearby sn值
+function caculateAKSNNearBy(sk, url, querystring_arrays) {
+
+    var querystring = queryEncodeNearby(querystring_arrays);
+	var temp=encodeURIComponent(url+"?"+querystring+sk);
+	return $.md5(temp);
+}
+//请求后台服务器获得json的值
+function getjson(url,data)
+{
+
+	       var data1 = queryEncode(data);
+	       if(data1!="")
+	       var url1 =url+ '?' +data1;
+
+	       $.getJSON(url1, function(e){
+               //alert("e:"+e);
+               renderMap(e);
+
+	    	 });
+}
+//请求后台服务器获得nearby,json的值
+function getjsonNearby(url,data)
+{
+
+	       var data1 = queryEncodeNearby(data);
+	       if(data1!="")
+	       var url1 =url+ '?' +data1;
+
+	       $.getJSON(url1, function(e){
+
+               renderMap(e);
+	    	 });
+}
+//根据地址信息搜索相关的坐标点
+function searchLocal(inputArr,tableid,ak,sk) {
+	var baseUrl="http://api.map.baidu.com";
+	var spUrl = "/geosearch/v3/local";
+	var paras = new Map();
+	paras.put("callback","?");
+	paras.put("geotable_id", tableid);
+	paras.put("ak",ak);
+	paras.put("q","");
+	paras.put("sortby","distance:1");
+	inputArr.each(function(key,value,index){
+        paras.put(key, value);
+    });
+	var sn = caculateAKSN(sk , spUrl , paras );
+	paras.put("sn", sn);
+	getjson(baseUrl+spUrl , paras);
+}
+//根据地理坐标搜索相关的坐标点
+function searchNearby(inputArr,tableid,ak,sk) {
+	var baseUrl="http://api.map.baidu.com";
+	var spUrl = "/geosearch/v3/nearby";
+	var paras = new Map();
+	paras.put("callback","?");
+	paras.put("geotable_id", tableid);
+	paras.put("ak",ak);
+	paras.put("sortby","distance:1");
+	inputArr.each(function(key,value,index){
+        paras.put(key, value);
+    });
+	var sn = caculateAKSNNearBy(sk , spUrl , paras );
+
+	paras.put("sn", sn);
+	getjsonNearby(baseUrl+spUrl , paras);
+}
+
+
+
+
+function test()
+{
+	var data = new Map();
+	//data.put("region", "武汉市");
+	data.put("location","114.40158,30.521551");
+    data.put("radius","300000");
+    tableid="123182";
+    searchNearby(data,"123182","GTHzlUeOj8GotfIr1NZ4VTqt",
+    		 "UvcvrwRoRRMOx9FjGotGNMcTU2ZWwYym");
+}
+//检测图片是否存在
+function CheckImgExists(imgurl) {
+  var ImgObj = new Image(); //判断图片是否存在
+  ImgObj.src = imgurl;
+  //没有图片，则返回-1
+  if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+ //test();
+</script>
+</div>
+</body>
+</html>
+
+

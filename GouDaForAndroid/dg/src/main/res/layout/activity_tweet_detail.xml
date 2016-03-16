@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/actionbar_tweetdetail" />
+
+    <!-- 评论列表-->
+    <RelativeLayout
+        android:id="@+id/rl_tweet_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.dg.app.ui.widget.listview.PullToRefreshList
+            android:id="@+id/plv_tweet_detail"
+            style="@style/ListViewLineDivider"/>
+
+        <com.dg.app.ui.widget.EmptyLayout
+            android:id="@+id/empty_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <!-- 底部评论回复框-->
+    <LinearLayout
+        android:id="@+id/ll_tweetdetail_replys"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:background="@color/bg_gray"
+            android:orientation="horizontal" >
+            <ImageView
+                android:id="@+id/iv_emoji_btn"
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_emoji_selector"/>
+            <EditText
+                android:id="@+id/et_reply_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:hint="回复状态"
+                android:textColorHint="@color/bg_gray_pressed"
+                android:padding="5dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/tv_send_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="16sp"
+                android:textColor="#BEA076"
+                android:text="确定"/>
+
+        </LinearLayout>
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_gray" />
+    </LinearLayout>
+
+    <!-- emoji表情选择布局界面-->
+    <LinearLayout
+        android:id="@+id/ll_emotion_dashboard"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_emotion_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </android.support.v4.view.ViewPager>
+
+        <RadioGroup
+            android:id="@+id/rg_emotion_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rb_emotion_dashboard_recently"
+                style="@style/RadioButtonEmotionDashboard"
+                android:text="最近" />
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/rb_emotion_dashboard_default"
+                style="@style/RadioButtonEmotionDashboard"
+                android:text="默认" />
+
+            <RadioButton
+                android:id="@+id/rb_emotion_dashboard_emoji"
+                style="@style/RadioButtonEmotionDashboard"
+                android:text="Emoji" />
+
+            <RadioButton
+                android:id="@+id/rb_emotion_dashboard_langxiaohua"
+                style="@style/RadioButtonEmotionDashboard"
+                android:text="浪小花" />
+        </RadioGroup>
+    </LinearLayout>
+
+
+</LinearLayout>

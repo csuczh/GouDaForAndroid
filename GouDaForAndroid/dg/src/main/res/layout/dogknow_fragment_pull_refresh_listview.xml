@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="?attr/layout_item_bg"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/actionbar_dogknow" layout="@layout/actionbar_dogknow"/>
+    <include android:id="@+id/search_edit" layout="@layout/search_bar" />
+    <!-- google 官方下拉刷新 -->
+
+    <com.dg.app.ui.CustomScrollView
+        android:id="@+id/swiperefreshlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible" >
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="#00000000"
+            android:listSelector="@color/transparent"
+            android:dividerHeight="20px"
+            android:scrollbars="none"
+            android:scrollingCache="true" />
+    </com.dg.app.ui.CustomScrollView>
+    
+    <FrameLayout
+        android:id="@+id/dogknow_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+    </FrameLayout>
+    
+    <com.dg.app.ui.empty.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+</LinearLayout>

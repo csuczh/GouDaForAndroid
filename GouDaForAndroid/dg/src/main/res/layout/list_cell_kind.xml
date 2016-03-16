@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <!--种类信息-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_60"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/space_20">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <org.kymjs.kjframe.widget.RoundImageView
+            android:id="@+id/kind_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="gouzhi"
+            android:focusable="false"
+            android:padding="1dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/space_20">
+        <TextView
+            android:id="@+id/kind_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textview_size_16"
+            android:layout_gravity="center_vertical"
+            android:text="@string/jiyangStart"
+            />
+                <TextView
+                    android:id="@+id/kind_short"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/textview"
+                    android:textSize="@dimen/textview_size_14"
+                    android:text="@string/jiyangStart"
+                    android:layout_gravity="bottom"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/kind_forward_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@mipmap/ic_enter"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
